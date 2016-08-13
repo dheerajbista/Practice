@@ -54,7 +54,7 @@ public class Calculation {
         return (Double.min(x, y));
     }
 
-    public int tbl() {
+    public void tbl() {
         int z = x;
         for (int i = 1; i <= y; i++) {
             z = x * i;
@@ -63,6 +63,5 @@ public class Calculation {
             System.out.print("=" + z );
             System.out.println("");
         }
-        return (0);
     }
 }

@@ -61,7 +61,7 @@ public class Program {
             }
             else if(ch==7)
             {
-                System.out.println(c.tbl());
+                c.tbl();
             }
             else
             {
