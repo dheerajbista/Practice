@@ -31,27 +31,24 @@ public class Program {
             System.out.println("2.Watches");
             System.out.println("3.Motorcycle");
             System.out.println("4.Cars");
-            System.out.println("Enter the Choice: ");
+            System.out.print("Enter the Choice: ");
             choice = input.nextInt();
             switch(choice){
-                case 1: keyword = "Sunglasses";
+                case 1: keyword = "c149-apparels-and-accessories-Sunglasses";
                     break;
-                case 2: keyword = "Watches";
+                case 2: keyword = "c149-apparels-and-accessories-Watches";
                     break;
-                case 3: keyword = "Motorcycle";
+                case 3: keyword = "c62-automobiles-Motorcycle";
                     break;
-                case 4: keyword = "Cars";
+                case 4: keyword = "c48-automobiles-Cars";
                     break;
-                default:
-                        System.out.println("invalid choice");
-                    break;
-                    
+                default: System.out.println("invalid choice");
+                    System.exit(0);
             }
-
             try {
 
                 Grabber grabber = new Grabber();
-                link = "http://hamrobazaar.com/c149-apparels-and-accessories-"+keyword;
+                link = "http://hamrobazaar.com/"+keyword;
                 String content = grabber.grab(link);
                 StringBuilder data = new StringBuilder();
                 String regEx = "Showing <b>1</b> to <b>20</b> of total <b>([0-9]+)</b>";
@@ -83,14 +80,14 @@ public class Program {
                             String url = imgURL + ".jpg";
                             System.out.println("URL parameter " + url);
                             grabber.downloadImage(url, name);
-                            data.append("Title: ").append(matcher.group(3)).append("\r\n").append("Price: ").append(matcher.group(4)).append("\r\n").append("Product Link: ").append(matcher.group(1)).append("\r\n").append("Image URL: ").append(matcher.group(2)).append("\r\n\r\n\r\n");
+                            data.append("Title: ").append(matcher.group(3)).append("\r\n").append("Price: ").append(matcher.group(4)).append("\r\n").append("Product Link: http://hamrobazaar.com/").append(matcher.group(1)).append("\r\n").append("Image URL: ").append(matcher.group(2)).append("\r\n\r\n\r\n");
                             FileWriter writer = new FileWriter("D:/leapfrog/Programs/hamrograbber/content.txt");
                             writer.write(data.toString());
                             writer.close();
                         }
                         offset += 20;
                     }
-
+                    outer:
                     System.out.println("Do you want to quit [Y/N]");
                     if (input.next().equalsIgnoreCase("y")) {
                         System.exit(0);
