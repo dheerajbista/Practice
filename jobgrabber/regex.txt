@@ -1,0 +1,18 @@
+mero job
+<div class='hotjtext'><strong.*?>(.*?)</strong><.*?><li><a href='(.*?)'.*?>(.*?)</a></li>
+
+company
+link
+title
+
+
+jobs nepal
+<a class="job-item" .*?>(.*?)</a>.*?</td>.*?<a href="(.*?)">(.*?)</a>
+
+1 link
+2 title
+4 company
+
+<a class="job-item" id="job-[0-9]+" href="(.*?)>\s+(.*?)</a>.*?</td>.*?<a href="(.*?)">\s+(.*?)</a>
+
+"<a class=\"job-item\" id=\"job-[0-9]+\" href=\"(.*?)>\\s+(.*?)</a>.*?</td>.*?<a href=\"(.*?)\">\\s+(.*?)</a>"
